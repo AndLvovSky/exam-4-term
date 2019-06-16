@@ -22,10 +22,18 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    domain/book.cpp
+    domain/book.cpp \
+    utility/compare/greater.tpp \
+    utility/compare/less.tpp\
+    sort/insertion_sorting.tpp \
 
 HEADERS += \
     domain/book.h \
+    sort/insertion_sorting.h \
+    sort/sorting.h \
+    utility/compare/comparator.h \
+    utility/compare/greater.h \
+    utility/compare/less.h \
     utility/hashable.h
 
 unix {

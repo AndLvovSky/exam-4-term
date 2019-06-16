@@ -1,3 +1,6 @@
+#ifndef BOOK_H
+#define BOOK_H
+
 #include <QString>
 #include "utility/hashable.h"
 
@@ -29,22 +32,26 @@ public:
          const QString& author,
          const QString& name);
 
-    QString getPublisher();
+    Book() = default;
 
-    QString getGenre();
+    QString getPublisher() const;
 
-    int getPublicationYear();
+    QString getGenre() const;
 
-    QString getAuthor();
+    int getPublicationYear() const;
 
-    QString getName();
+    QString getAuthor() const;
 
-    int getId();
+    QString getName() const;
+
+    int getId() const;
 
     QString toString();
 
-    unsigned int getHashCode() override;
+    unsigned int getHashCode()  override;
 
-    bool operator == (const Book& other) override;
+    bool operator == (const Book& other) const override;
 
 };
+
+#endif // BOOK_H

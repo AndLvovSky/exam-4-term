@@ -13,17 +13,17 @@ Book::Book(const QString& publisher,
     name(name),
     id(counter++) {}
 
-QString Book::getPublisher() { return publisher; }
+QString Book::getPublisher() const { return publisher; }
 
-QString Book::getGenre() { return genre; }
+QString Book::getGenre() const  { return genre; }
 
-int Book::getPublicationYear() { return publicationYear; }
+int Book::getPublicationYear() const { return publicationYear; }
 
-QString Book::getAuthor() { return author; }
+QString Book::getAuthor() const { return author; }
 
-QString Book::getName() { return name; }
+QString Book::getName() const { return name; }
 
-int Book::getId() { return id; }
+int Book::getId() const { return id; }
 
 QString Book::toString() {
     QString repr;
@@ -64,7 +64,7 @@ unsigned int Book::getHashCode() {
     return hashCode;
 }
 
-bool Book::operator == (const Book& other) {
+bool Book::operator == (const Book& other) const {
     return publisher == other.publisher &&
         genre == other.genre &&
         publicationYear == other.publicationYear &&
