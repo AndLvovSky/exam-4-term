@@ -6,7 +6,7 @@
 #include "utility/compare/less.h"
 
 template <typename T>
-struct Sorting {
+struct Sorting  {
 
     virtual void sort(QVector<T>& v,
                       const Comparator<T>& comp = Less<T>()) = 0;

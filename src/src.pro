@@ -26,9 +26,19 @@ SOURCES += \
     utility/compare/greater.tpp \
     utility/compare/less.tpp\
     sort/insertion_sorting.tpp \
+    event/compare.tpp \
+    event/extract.tpp \
+    event/move.tpp \
+    event/put.tpp \
 
 HEADERS += \
     domain/book.h \
+    event/algorithm_event.h \
+    event/compare.h \
+    event/extract.h \
+    event/move.h \
+    event/put.h \
+    event/responsive_algorithm.h \
     sort/insertion_sorting.h \
     sort/sorting.h \
     utility/compare/comparator.h \

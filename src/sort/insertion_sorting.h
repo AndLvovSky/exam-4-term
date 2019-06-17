@@ -4,9 +4,10 @@
 #include "sorting.h"
 #include "utility/compare/comparator.h"
 #include "utility/compare/less.h"
+#include "event/responsive_algorithm.h"
 
 template <typename T>
-class InsertionSorting : public Sorting<T> {
+class InsertionSorting : public Sorting<T>, public ResponsiveAlgorithm {
 
 public:
 
