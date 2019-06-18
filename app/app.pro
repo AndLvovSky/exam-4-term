@@ -26,10 +26,12 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        main_window.cpp
+        main_window.cpp \
+        widget/insertion_sort_widget.cpp
 
 HEADERS += \
-        main_window.h
+        main_window.h \
+        widget/insertion_sort_widget.h
 
 FORMS += \
         main_window.ui

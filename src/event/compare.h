@@ -3,18 +3,18 @@
 
 #include "algorithm_event.h"
 
-template <typename Where, typename What>
+template <typename What, typename Where>
 struct Compare : AlgorithmEvent {
-
-    const Where pa;
-
-    const Where pb;
 
     const What a;
 
     const What b;
 
-    Compare(const Where& pa, const Where& pb, const What& a, const What& b);
+    const Where pa;
+
+    const Where pb;
+
+    Compare(const What& a, const What& b, const Where& pa, const Where& pb);
 
 };
 
