@@ -12,7 +12,7 @@ class InsertionSorting : public Sorting<T>, public ResponsiveAlgorithm {
 public:
 
     void sort(QVector<T>& v,
-              const Comparator<T>& comp) override;
+              const Comparator<T>& comp = Less<T>()) override;
 
 };
 

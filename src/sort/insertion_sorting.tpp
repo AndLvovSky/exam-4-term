@@ -15,7 +15,7 @@ void InsertionSorting<T>::sort(QVector<T>& v,
         T cur = v[i];
         emit step(std::make_shared<Extract<T, int>>(cur, i));
         int j = i - 1;
-        emit step(std::make_shared<Compare<T, int>>(cur, v[j], i, j));
+        emit step(std::make_shared<Compare<int, T>>(i, j, cur, v[j]));
         while (j >= 0 && comp.compare(cur, v[j]) < 0){
             v[j + 1] = v[j];
             emit step(std::make_shared<Move<T, int, QVector<T>>>(j, j + 1, v[j], v));

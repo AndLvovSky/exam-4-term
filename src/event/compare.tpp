@@ -1,6 +1,6 @@
 #include "compare.h"
 
-template <typename What, typename Where>
-Compare<What, Where>::Compare(
-    const What& a, const What& b, const Where& pa, const Where& pb) :
-    a(a), b(b), pa(pa), pb(pb) {}
+template <typename Where, typename What>
+Compare<Where, What>::Compare(
+    const Where& pa, const Where& pb, const What& a, const What& b) :
+    pa(pa), pb(pb), a(a), b(b) {}

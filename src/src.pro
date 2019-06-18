@@ -23,7 +23,6 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     domain/book.cpp \
-    runner/connector/qvector_connector.cpp \
     runner/event_transfer.cpp \
     utility/compare/greater.tpp \
     utility/compare/less.tpp\
@@ -34,8 +33,12 @@ SOURCES += \
     event/put.tpp \
     event/start.tpp \
     event/end.tpp \
-    runner/algorithm_runner.tpp \
     event/backup.tpp \
+    player/algorithm_player.tpp \
+    visualization/insertion_sort_int_visualizator.tpp \
+    runner/inner_algorithm_runner.tpp \
+    runner/outer_algorithm_runner.tpp \
+    runner/connector/insertion_sorting_connector.tpp \
 
 HEADERS += \
     domain/book.h \
@@ -48,15 +51,21 @@ HEADERS += \
     event/put.h \
     event/responsive_algorithm.h \
     event/start.h \
+    player/algorithm_player.h \
     runner/algorithm_runner.h \
-    runner/connector/qvector_connector.h \
+    runner/connector/insertion_sorting_connector.h \    
     runner/event_transfer.h \
+    runner/inner_algorithm_runner.h \
+    runner/outer_algorithm_runner.h \
     sort/insertion_sorting.h \
     sort/sorting.h \
     utility/compare/comparator.h \
     utility/compare/greater.h \
     utility/compare/less.h \
-    utility/hashable.h
+    utility/hashable.h \
+    utility/none.h \
+    visualization/insertion_sort_int_visualizator.h \
+    visualization/visualizator.h
 
 unix {
     target.path = /usr/lib

@@ -6,34 +6,21 @@
 #include <functional>
 #include "event_transfer.h"
 #include <memory>
+#include "utility/none.h"
 
-template <typename Structure, typename Connector>
-class AlgorithmRunner {
+template <typename Structure>
+struct AlgorithmRunner {
 
-    Structure& structure;
+    virtual std::shared_ptr<AlgorithmEvent> stepBack() = 0;
 
-    QVector<std::shared_ptr<AlgorithmEvent>> events;
+    virtual std::shared_ptr<AlgorithmEvent> stepForward() = 0;
 
-    EventTransfer eventTransfer;
+    virtual bool hasPrevious() const = 0;
 
-    int position = -1;
+    virtual bool hasNext() const = 0;
 
-public:
-
-    AlgorithmRunner(Structure& structure);
-
-    void run(const std::function<void (Structure&)>& algorithm);
-
-    std::shared_ptr<AlgorithmEvent> stepBack();
-
-    std::shared_ptr<AlgorithmEvent> stepForward();
-
-    bool hasPrevious() const;
-
-    bool hasNext() const;
+    virtual Structure& getStructure() = 0;
 
 };
-
-#include "algorithm_runner.tpp"
 
 #endif // ALGORITHM_RUNNER_H
