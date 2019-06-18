@@ -25,6 +25,9 @@ public:
         qInfo() << "emit 3";
         emit step(std::make_shared<CustomEvent>(3));
     }
+    CustomStructure& operator = (const CustomStructure& other) {
+        return *this;
+    }
 };
 
 class CustomStructureConnector : public QObject {

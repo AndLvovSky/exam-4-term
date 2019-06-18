@@ -22,7 +22,7 @@ void InsertionSorting<T>::sort(QVector<T>& v,
             j--;
         }
         v[j + 1] = cur;
-        emit step(std::make_shared<Put<T, int>>(cur, j + 1));
+        emit step(std::make_shared<Put<T, int, QVector<T>>>(cur, j + 1, v));
     }
     emit step(std::make_shared<End<QVector<T>>>(v));
 }

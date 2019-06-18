@@ -2,11 +2,10 @@
 #define START_H
 
 #include "algorithm_event.h"
+#include "backup.h"
 
 template <typename Structure>
-struct Start : AlgorithmEvent {
-
-    const Structure before;
+struct Start : AlgorithmEvent, Backup<Structure> {
 
     Start(const Structure& before);
 

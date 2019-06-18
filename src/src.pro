@@ -35,10 +35,12 @@ SOURCES += \
     event/start.tpp \
     event/end.tpp \
     runner/algorithm_runner.tpp \
+    event/backup.tpp \
 
 HEADERS += \
     domain/book.h \
     event/algorithm_event.h \
+    event/backup.h \
     event/compare.h \
     event/end.h \
     event/extract.h \

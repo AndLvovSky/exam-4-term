@@ -1,4 +1,5 @@
 #include "algorithm_runner.h"
+#include "event/backup.h"
 
 template <typename Structure, typename Connector>
 AlgorithmRunner<Structure, Connector>::AlgorithmRunner(Structure& structure) :
@@ -18,7 +19,11 @@ AlgorithmRunner<Structure, Connector>::stepBack() {
     if (hasPrevious()) {
         position--;
     }
-    return events[position];
+    auto event = events[position];
+    if (auto backup = std::dynamic_pointer_cast<Backup<Structure>>(event)) {
+        backup->restore(structure);
+    }
+    return event;
 }
 
 template <typename Structure, typename Connector>
@@ -26,6 +31,10 @@ std::shared_ptr<AlgorithmEvent>
 AlgorithmRunner<Structure, Connector>::stepForward() {
     if (hasNext()) {
         position++;
+    }
+    auto event = events[position];
+    if (auto backup = std::dynamic_pointer_cast<Backup<Structure>>(event)) {
+        backup->restore(structure);
     }
     return events[position];
 }

@@ -3,6 +3,8 @@
 
 struct AlgorithmEvent {
 
+    virtual ~AlgorithmEvent() {}
+
 };
 
 #endif // ALGORITHM_EVENT_H

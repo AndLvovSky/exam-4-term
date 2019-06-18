@@ -2,17 +2,16 @@
 #define MOVE_H
 
 #include "algorithm_event.h"
+#include "backup.h"
 
 template <typename What, typename Where, typename Structure>
-struct Move : AlgorithmEvent {
+struct Move : AlgorithmEvent, Backup<Structure> {
 
     const Where from;
 
     const Where to;
 
     const What what;
-
-    const Structure after;
 
     Move(const Where& from, const Where& to, const What& what,
         const Structure& after);
