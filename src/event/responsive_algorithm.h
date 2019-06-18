@@ -3,14 +3,15 @@
 
 #include <QObject>
 #include "algorithm_event.h"
+#include <memory>
 
-struct ResponsiveAlgorithm {
+struct ResponsiveAlgorithm : public QObject {
 
-    Q_OBJECT
+Q_OBJECT
 
 signals:
 
-    void step(const AlgorithmEvent& event);
+    void step(std::shared_ptr<AlgorithmEvent> event);
 
 };
 

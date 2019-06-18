@@ -1,5 +1,5 @@
-#ifndef SHIFT_H
-#define SHIFT_H
+#ifndef MOVE_H
+#define MOVE_H
 
 #include "algorithm_event.h"
 
@@ -19,4 +19,6 @@ struct Move : AlgorithmEvent {
 
 };
 
-#endif // SHIFT_H
+#include "move.tpp"
+
+#endif // MOVE_H

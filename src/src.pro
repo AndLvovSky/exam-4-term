@@ -23,6 +23,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     domain/book.cpp \
+    runner/connector/qvector_connector.cpp \
+    runner/event_transfer.cpp \
     utility/compare/greater.tpp \
     utility/compare/less.tpp\
     sort/insertion_sorting.tpp \
@@ -30,15 +32,23 @@ SOURCES += \
     event/extract.tpp \
     event/move.tpp \
     event/put.tpp \
+    event/start.tpp \
+    event/end.tpp \
+    runner/algorithm_runner.tpp \
 
 HEADERS += \
     domain/book.h \
     event/algorithm_event.h \
     event/compare.h \
+    event/end.h \
     event/extract.h \
     event/move.h \
     event/put.h \
     event/responsive_algorithm.h \
+    event/start.h \
+    runner/algorithm_runner.h \
+    runner/connector/qvector_connector.h \
+    runner/event_transfer.h \
     sort/insertion_sorting.h \
     sort/sorting.h \
     utility/compare/comparator.h \
