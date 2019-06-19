@@ -3,6 +3,7 @@
 #include <memory>
 #include <QDebug>
 #include <thread>
+#include "settings/settings.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -21,7 +22,7 @@ MainWindow::~MainWindow() {
 
 void MainWindow::on_generateBooksButton_clicked() {
     books.clear();
-    const int n = 5;
+    const int n = Settings::get().getBooksToGenerate();
     for (int i = 0; i < n; i++) {
         books.push_back(bookGenerator.generateBook());
     }
@@ -39,13 +40,13 @@ void MainWindow::updateBooksView() {
 }
 
 void MainWindow::on_sortButton_clicked() {
-    auto comp = BookComparatorFactory::makeComparator(sortBy());
+    comp = BookComparatorFactory::makeComparator(sortBy());
     insertionSortRunner.run(
-        [&comp](
+        [this](
         InsertionSorting<Book>& sorting, QVector<Book>& books) {
         sorting.sort(books, *comp);
     });
-    const int pause = 1000;
+    const int pause = Settings::get().getPauseBetweenSteps();
     qInfo() << "start player";
     insertionSortTimer->start(pause);
 }
@@ -76,4 +77,12 @@ void MainWindow::insertionSortStep() {
     } else {
         insertionSortTimer->stop();
     }
+}
+
+void MainWindow::on_booksCountSpinBox_valueChanged(int booksCount) {
+    Settings::get().setBooksToGenerate(booksCount);
+}
+
+void MainWindow::on_pauseSpinBox_valueChanged(int pause) {
+    Settings::get().setPauseBetweenSteps(pause);
 }

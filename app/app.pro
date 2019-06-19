@@ -29,12 +29,14 @@ SOURCES += \
         generator/book_generator.cpp \
         main.cpp \
         main_window.cpp \
+        settings/settings.cpp \
         widget/insertion_sort_widget.cpp
 
 HEADERS += \
         comparator/book_comparator_factory.h \
         generator/book_generator.h \
         main_window.h \
+        settings/settings.h \
         widget/insertion_sort_widget.h
 
 FORMS += \

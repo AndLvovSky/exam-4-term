@@ -31,8 +31,11 @@ void InsertionSortWidget::paint(StartPtr se) {
     qInfo() << "start event";
     //setText("start");
     se->restore(books);
+    qInfo() << "restore";
     findHeightCoefficients(se->comp);
+    qInfo() << "coef";
     paintBooks();
+    qInfo() << "finish start event";
 }
 
 void InsertionSortWidget::paint(EndPtr se) {
@@ -70,9 +73,13 @@ void InsertionSortWidget::paint(ExtractPtr se) {
 
 void InsertionSortWidget::findHeightCoefficients(const Comparator<Book>& comp) {
     QVector<Book> b = books;
+    qInfo() << b.size();
+    qInfo() << "here";
+    qInfo() << comp.compare(b[0], b[1]);
     std::sort(b.begin(), b.end(), [&comp](const Book& a, const Book& b) {
         return comp.compare(a, b) < 0;
     });
+    qInfo() << "sort";
     QVector<int> pos(b.size());
     pos[0] = 1;
     int c = 1;
@@ -80,6 +87,7 @@ void InsertionSortWidget::findHeightCoefficients(const Comparator<Book>& comp) {
         if (!(books[i - 1] == books[i])) c++;
         pos[i] = c;
     }
+    qInfo() << "here a";
     for (int i = 0; i < b.size(); i++) {
         heightCoef[b[i].getId()] = (float) pos[i] / c;
     }

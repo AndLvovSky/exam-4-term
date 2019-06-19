@@ -46,7 +46,7 @@ private:
 
     const QColor COLUMN_COLOR = QColor(0, 0, 255);
 
-    const QColor TEXT_COLOR = QColor(255, 255, 255);
+    const QColor TEXT_COLOR = QColor(0, 0, 0);
 
     QPainter* painter;
 

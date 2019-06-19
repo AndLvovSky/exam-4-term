@@ -50,6 +50,8 @@ class MainWindow : public QMainWindow {
 
     QTimer* insertionSortTimer;
 
+    std::shared_ptr<Comparator<Book>> comp;
+
 public:
 
     explicit MainWindow(QWidget *parent = nullptr);
@@ -65,6 +67,10 @@ private slots:
     void on_sortButton_clicked();
 
     void insertionSortStep();
+
+    void on_booksCountSpinBox_valueChanged(int booksCount);
+
+    void on_pauseSpinBox_valueChanged(int pause);
 
 private:
 
