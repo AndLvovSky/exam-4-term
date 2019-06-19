@@ -9,11 +9,14 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow) {
     ui->setupUi(this);
     ui->sortVisualizationLayout->addWidget(insertionSortWidget);
+    insertionSortTimer = new QTimer();
+    connect(insertionSortTimer, SIGNAL(timeout()), this, SLOT(insertionSortStep()));
 }
 
 MainWindow::~MainWindow() {
     delete ui;
     delete insertionSortWidget;
+    delete insertionSortTimer;
 }
 
 void MainWindow::on_generateBooksButton_clicked() {
@@ -44,7 +47,7 @@ void MainWindow::on_sortButton_clicked() {
     });
     const int pause = 1000;
     qInfo() << "start player";
-    insertionSortPlayer.play(pause);
+    insertionSortTimer->start(pause);
 }
 
 BookComparatorFactory::Field MainWindow::sortBy() {
@@ -65,4 +68,12 @@ QString MainWindow::booksToString() {
     }
     res += ")";
     return res;
+}
+
+void MainWindow::insertionSortStep() {
+    if (insertionSortRunner.hasNext()) {
+        insertionSortWidget->visualize(insertionSortRunner.stepForward());
+    } else {
+        insertionSortTimer->stop();
+    }
 }

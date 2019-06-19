@@ -10,6 +10,7 @@
 #include "generator/book_generator.h"
 #include "comparator/book_comparator_factory.h"
 #include <QMap>
+#include <QTimer>
 
 namespace Ui {
 
@@ -47,6 +48,8 @@ class MainWindow : public QMainWindow {
     AlgorithmPlayer<QVector<Book>> insertionSortPlayer{
         insertionSortRunner, *insertionSortWidget};
 
+    QTimer* insertionSortTimer;
+
 public:
 
     explicit MainWindow(QWidget *parent = nullptr);
@@ -60,6 +63,8 @@ private slots:
     void on_generateBooksButton_clicked();
 
     void on_sortButton_clicked();
+
+    void insertionSortStep();
 
 private:
 
