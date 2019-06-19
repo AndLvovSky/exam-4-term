@@ -25,11 +25,15 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+        comparator/book_comparator_factory.cpp \
+        generator/book_generator.cpp \
         main.cpp \
         main_window.cpp \
         widget/insertion_sort_widget.cpp
 
 HEADERS += \
+        comparator/book_comparator_factory.h \
+        generator/book_generator.h \
         main_window.h \
         widget/insertion_sort_widget.h
 

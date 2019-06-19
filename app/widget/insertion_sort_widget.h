@@ -13,7 +13,8 @@
 #include "event/put.h"
 #include "event/extract.h"
 
-class InsertionSortWidget : public QLabel, public Visualizator<Book> {
+class InsertionSortWidget :
+    public QLabel, public Visualizator<QVector<Book>> {
 
 private:
 
@@ -25,15 +26,15 @@ private:
 
     typedef std::shared_ptr<End> EndPtr;
 
-    typedef Compare<int, Book> Compare;
+    typedef Compare<Book, int> Compare;
 
     typedef std::shared_ptr<Compare> ComparePtr;
 
-    typedef Move<int, Book, QVector<Book>> Move;
+    typedef Move<Book, int, QVector<Book>> Move;
 
     typedef std::shared_ptr<Move> MovePtr;
 
-    typedef Put<int, Book, QVector<Book>> Put;
+    typedef Put<Book, int, QVector<Book>> Put;
 
     typedef std::shared_ptr<Put> PutPtr;
 

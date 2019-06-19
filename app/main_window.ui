@@ -48,7 +48,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="addBookSortButton">
+         <widget class="QPushButton" name="generateBooksButton">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
             <horstretch>0</horstretch>
@@ -56,7 +56,7 @@
            </sizepolicy>
           </property>
           <property name="text">
-           <string>add book</string>
+           <string>generate books</string>
           </property>
          </widget>
         </item>
@@ -78,7 +78,7 @@
              <x>0</x>
              <y>0</y>
              <width>669</width>
-             <height>107</height>
+             <height>106</height>
             </rect>
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -106,45 +106,52 @@
           </property>
           <layout class="QHBoxLayout" name="horizontalLayout">
            <item>
-            <widget class="QRadioButton" name="radioButton">
-             <property name="text">
-              <string>publisher</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QRadioButton" name="radioButton_2">
-             <property name="text">
-              <string>genre</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QRadioButton" name="radioButton_3">
-             <property name="text">
-              <string>publication year</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QRadioButton" name="radioButton_4">
-             <property name="text">
-              <string>author</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QRadioButton" name="radioButton_5">
-             <property name="text">
-              <string>name</string>
-             </property>
-            </widget>
+            <layout class="QHBoxLayout" name="sortByLayout">
+             <item>
+              <widget class="QRadioButton" name="radioButton">
+               <property name="text">
+                <string>publisher</string>
+               </property>
+               <property name="checked">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QRadioButton" name="radioButton_2">
+               <property name="text">
+                <string>genre</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QRadioButton" name="radioButton_3">
+               <property name="text">
+                <string>publication year</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QRadioButton" name="radioButton_4">
+               <property name="text">
+                <string>author</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QRadioButton" name="radioButton_5">
+               <property name="text">
+                <string>name</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
            </item>
           </layout>
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="pushButton">
+         <widget class="QPushButton" name="sortButton">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
             <horstretch>0</horstretch>
@@ -173,7 +180,7 @@
              <x>0</x>
              <y>0</y>
              <width>669</width>
-             <height>106</height>
+             <height>105</height>
             </rect>
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_5">
