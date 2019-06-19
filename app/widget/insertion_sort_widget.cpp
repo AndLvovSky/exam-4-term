@@ -1,6 +1,7 @@
 #include "insertion_sort_widget.h"
 #include <memory>
 #include <QDebug>
+#include <algorithm>
 
 void InsertionSortWidget::visualize(std::shared_ptr<AlgorithmEvent> ae) {
     qInfo() << "visualize event";
@@ -9,6 +10,7 @@ void InsertionSortWidget::visualize(std::shared_ptr<AlgorithmEvent> ae) {
 }
 
 void InsertionSortWidget::paintEvent(QPaintEvent* paintEvent) {
+    painter = new QPainter(this);
     if (auto se = std::dynamic_pointer_cast<Start>(ae)) {
         paint(se);
     } else if (auto se = std::dynamic_pointer_cast<End>(ae)) {
@@ -22,35 +24,81 @@ void InsertionSortWidget::paintEvent(QPaintEvent* paintEvent) {
     } else if (auto se = std::dynamic_pointer_cast<Extract>(ae)) {
         paint(se);
     }
-    QLabel::paintEvent(paintEvent);
+    delete painter;
 }
 
 void InsertionSortWidget::paint(StartPtr se) {
     qInfo() << "start event";
-    setText("start");
+    //setText("start");
+    se->restore(books);
+    findHeightCoefficients(se->comp);
+    paintBooks();
 }
 
 void InsertionSortWidget::paint(EndPtr se) {
     qInfo() << "end event";
-    setText("end");
+    //setText("end");
+    se->restore(books);
+    paintBooks();
 }
 
 void InsertionSortWidget::paint(ComparePtr se) {
     qInfo() << "compare event";
-    setText("compare");
+    //setText("compare");
+    paintBooks();
 }
 
 void InsertionSortWidget::paint(MovePtr se) {
     qInfo() << "move event";
-    setText("move");
+    //setText("move");
+    se->restore(books);
+    paintBooks();
 }
 
 void InsertionSortWidget::paint(PutPtr se) {
     qInfo() << "put event";
-    setText("put");
+    //setText("put");
+    se->restore(books);
+    paintBooks();
 }
 
 void InsertionSortWidget::paint(ExtractPtr se) {
     qInfo() << "extract event";
-    setText("extract");
+    //setText("extract");
+    paintBooks();
+}
+
+void InsertionSortWidget::findHeightCoefficients(const Comparator<Book>& comp) {
+    QVector<Book> b = books;
+    std::sort(b.begin(), b.end(), [&comp](const Book& a, const Book& b) {
+        return comp.compare(a, b) < 0;
+    });
+    QVector<int> pos(b.size());
+    pos[0] = 1;
+    int c = 1;
+    for (int i = 1; i < books.size(); i++) {
+        if (!(books[i - 1] == books[i])) c++;
+        pos[i] = c;
+    }
+    for (int i = 0; i < b.size(); i++) {
+        heightCoef[b[i].getId()] = (float) pos[i] / c;
+    }
+}
+
+void InsertionSortWidget::paintBooks() {
+    for (int i = 0; i < books.size(); i++) {
+        int id = books[i].getId();
+        paintColumn(i, id);
+    }
+}
+
+void InsertionSortWidget::paintColumn(int pos, int id) {
+    int wh = height(), ww = width();
+    painter->setPen(TEXT_COLOR);
+    painter->setBrush(COLUMN_COLOR);
+    int h = heightCoef[id] * wh;
+    int l = pos * columnWidth;
+    int t = wh - h;
+    painter->drawRect(l, t, columnWidth, h);
+    painter->drawText(l + 5, wh - 5, QString::number(id));
 }

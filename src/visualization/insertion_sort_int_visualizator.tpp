@@ -1,6 +1,6 @@
 #include "insertion_sort_int_visualizator.h"
 #include <QDebug>
-#include "event/start.h"
+#include "event/start_sort.h"
 #include "event/end.h"
 #include "event/compare.h"
 #include "event/move.h"
@@ -11,7 +11,7 @@
 void InsertionSortIntVisualizator::visualize(
     std::shared_ptr<AlgorithmEvent> event) {
     QVector<int> v;
-    if (auto se = std::dynamic_pointer_cast<Start<QVector<int>>>(event)) {
+    if (auto se = std::dynamic_pointer_cast<StartSort<QVector<int>, int>>(event)) {
         se->restore(v);
         qInfo() << "start sort:";
         qInfo() << v;

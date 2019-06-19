@@ -39,6 +39,7 @@ SOURCES += \
     runner/inner_algorithm_runner.tpp \
     runner/outer_algorithm_runner.tpp \
     runner/connector/insertion_sorting_connector.tpp \
+    event/start_sort.tpp \
 
 HEADERS += \
     domain/book.h \
@@ -51,6 +52,7 @@ HEADERS += \
     event/put.h \
     event/responsive_algorithm.h \
     event/start.h \
+    event/start_sort.h \
     player/algorithm_player.h \
     runner/algorithm_runner.h \
     runner/connector/insertion_sorting_connector.h \    

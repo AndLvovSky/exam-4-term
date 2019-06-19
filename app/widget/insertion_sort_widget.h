@@ -6,19 +6,21 @@
 #include <memory>
 #include "visualization/visualizator.h"
 #include "domain/book.h"
-#include "event/start.h"
+#include "event/start_sort.h"
 #include "event/end.h"
 #include "event/compare.h"
 #include "event/move.h"
 #include "event/put.h"
 #include "event/extract.h"
+#include <QMap>
+#include <QPainter>
 
 class InsertionSortWidget :
     public QLabel, public Visualizator<QVector<Book>> {
 
 private:
 
-    typedef Start<QVector<Book>> Start;
+    typedef StartSort<QVector<Book>, Book> Start;
 
     typedef std::shared_ptr<Start> StartPtr;
 
@@ -42,7 +44,19 @@ private:
 
     typedef std::shared_ptr<Extract> ExtractPtr;
 
+    const QColor COLUMN_COLOR = QColor(0, 0, 255);
+
+    const QColor TEXT_COLOR = QColor(255, 255, 255);
+
+    QPainter* painter;
+
     std::shared_ptr<AlgorithmEvent> ae;
+
+    QVector<Book> books;
+
+    QMap<int, float> heightCoef;
+
+    int columnWidth = 50;
 
 protected:
 
@@ -65,6 +79,12 @@ private:
     void paint(PutPtr se);
 
     void paint(ExtractPtr se);
+
+    void findHeightCoefficients(const Comparator<Book>& comp);
+
+    void paintBooks();
+
+    void paintColumn(int pos, int id);
 
 };
 

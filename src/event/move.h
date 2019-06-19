@@ -7,11 +7,11 @@
 template <typename What, typename Where, typename Structure>
 struct Move : AlgorithmEvent, Backup<Structure> {
 
+    const What what;
+
     const Where from;
 
     const Where to;
-
-    const What what;
 
     Move(const What& what, const Where& from, const Where& to,
         const Structure& after);

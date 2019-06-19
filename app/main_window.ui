@@ -171,6 +171,9 @@
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
+          <property name="styleSheet">
+           <string notr="true">background: rgb(200, 255, 255);</string>
+          </property>
           <property name="widgetResizable">
            <bool>true</bool>
           </property>

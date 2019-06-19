@@ -1,6 +1,6 @@
 #include "book_generator.h"
 
-QRandomGenerator BookGenerator::gen;
+QRandomGenerator BookGenerator::gen(100);
 
 Book BookGenerator::generateBook() {
     QString publisher = generateString();

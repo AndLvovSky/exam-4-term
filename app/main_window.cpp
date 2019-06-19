@@ -2,6 +2,7 @@
 #include "ui_main_window.h"
 #include <memory>
 #include <QDebug>
+#include <thread>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -37,11 +38,11 @@ void MainWindow::updateBooksView() {
 void MainWindow::on_sortButton_clicked() {
     auto comp = BookComparatorFactory::makeComparator(sortBy());
     insertionSortRunner.run(
-        [comp](
+        [&comp](
         InsertionSorting<Book>& sorting, QVector<Book>& books) {
         sorting.sort(books, *comp);
     });
-    const int pause = 500;
+    const int pause = 1000;
     qInfo() << "start player";
     insertionSortPlayer.play(pause);
 }

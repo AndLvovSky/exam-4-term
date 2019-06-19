@@ -3,14 +3,14 @@
 #include "event/extract.h"
 #include "event/move.h"
 #include "event/put.h"
-#include "event/start.h"
+#include "event/start_sort.h"
 #include "event/end.h"
 #include <memory>
 
 template <typename T>
 void InsertionSorting<T>::sort(QVector<T>& v,
                                const Comparator<T>& comp) {
-    emit step(std::make_shared<Start<QVector<T>>>(v));
+    emit step(std::make_shared<StartSort<QVector<T>, T>>(v, comp));
     for (int i = 1; i < v.size(); i++) {
         T cur = v[i];
         emit step(std::make_shared<Extract<T, int>>(cur, i));
