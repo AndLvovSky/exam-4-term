@@ -6,6 +6,7 @@
 #include <QString>
 #include <memory>
 
+// Abstract Factory
 class BookComparatorFactory {
 
 public:

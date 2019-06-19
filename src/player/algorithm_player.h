@@ -4,6 +4,7 @@
 #include "runner/algorithm_runner.h"
 #include "visualization/visualizator.h"
 
+// Dependency injection
 template <typename Structure>
 class AlgorithmPlayer {
 

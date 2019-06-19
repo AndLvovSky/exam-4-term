@@ -18,6 +18,7 @@ namespace Ui {
 
 }
 
+// MVC
 class MainWindow : public QMainWindow {
 
     Q_OBJECT

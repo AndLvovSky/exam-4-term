@@ -9,6 +9,7 @@
 #include "utility/none.h"
 #include "algorithm_runner.h"
 
+// Observer
 template <typename Algorithm, typename Structure, typename Connector>
 class OuterAlgorithmRunner : public AlgorithmRunner<Structure> {
 
