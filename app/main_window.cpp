@@ -76,6 +76,7 @@ void MainWindow::insertionSortStep() {
         insertionSortWidget->visualize(insertionSortRunner.stepForward());
     } else {
         insertionSortTimer->stop();
+        updateBooksView();
     }
 }
 

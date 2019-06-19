@@ -3,7 +3,7 @@
 
 class Settings {
 
-    int booksToGenerate = 15;
+    int booksToGenerate = 10;
 
     int pauseBetweenSteps = 200;
 
