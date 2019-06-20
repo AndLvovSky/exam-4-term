@@ -1,11 +1,11 @@
 #ifndef CUSTOM_STRUCTURE_H
 #define CUSTOM_STRUCTURE_H
 
-#include "event/responsive_algorithm.h"
+#include "event/responsive_entity.h"
 #include "custom_event.h"
 #include <QDebug>
 
-class CustomStructure : public ResponsiveAlgorithm {
+class CustomStructure : public ResponsiveEntity {
 public:
     void doSomething() {
         qInfo() << "do something";

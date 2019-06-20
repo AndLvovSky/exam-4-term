@@ -3,6 +3,9 @@
 
 #include "algorithm_event.h"
 
+/**
+ * @brief The Extract class represents keeping an object from a location.
+ */
 template <typename What, typename Where>
 struct Extract : AlgorithmEvent {
 

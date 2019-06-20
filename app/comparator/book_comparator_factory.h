@@ -6,7 +6,10 @@
 #include <QString>
 #include <memory>
 
-// Abstract Factory
+/**
+ * @brief The BookComparatorFactory class is an
+ * abstract factory for creating comparators.
+ */
 class BookComparatorFactory {
 
 public:

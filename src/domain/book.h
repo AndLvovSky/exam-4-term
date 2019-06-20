@@ -4,6 +4,9 @@
 #include <QString>
 #include "utility/hashable.h"
 
+/**
+ * @brief The Book class represents a book.
+ */
 class Book : Hashable<Book> {
 
 private:
@@ -18,11 +21,11 @@ private:
 
     QString name;
 
-    int id;
+    int id; /** determined by counter value at the creation time */
 
-    unsigned int hashCode = 0;
+    unsigned int hashCode = 0; /** calculated only once */
 
-    static int counter;
+    static int counter; /** number of created books */
 
 public:
 

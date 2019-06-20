@@ -4,6 +4,9 @@
 #include "algorithm_event.h"
 #include "backup.h"
 
+/**
+ * @brief The Move class represents moving object.
+ */
 template <typename What, typename Where, typename Structure>
 struct Move : AlgorithmEvent, Backup<Structure> {
 

@@ -50,7 +50,7 @@ HEADERS += \
     event/extract.h \
     event/move.h \
     event/put.h \
-    event/responsive_algorithm.h \
+    event/responsive_entity.h \
     event/start.h \
     event/start_sort.h \
     player/algorithm_player.h \
@@ -65,7 +65,6 @@ HEADERS += \
     utility/compare/greater.h \
     utility/compare/less.h \
     utility/hashable.h \
-    utility/none.h \
     visualization/insertion_sort_int_visualizator.h \
     visualization/visualizator.h
 

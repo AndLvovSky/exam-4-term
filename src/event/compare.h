@@ -3,6 +3,10 @@
 
 #include "algorithm_event.h"
 
+/**
+ * @brief The Compare class represents comparing of 2 objects,
+ * that located somewhere.
+ */
 template <typename What, typename Where>
 struct Compare : AlgorithmEvent {
 

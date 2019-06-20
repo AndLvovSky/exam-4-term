@@ -6,10 +6,14 @@
 #include <functional>
 #include "event_transfer.h"
 #include <memory>
-#include "utility/none.h"
 #include "algorithm_runner.h"
 
-// Observer
+/**
+ * @brief The OuterAlgorithmRunner class used for running algorithms,
+ * that take some structure as parameter.
+ *
+ * See more info in InnerAlgorithmRunner.
+ */
 template <typename Algorithm, typename Structure, typename Connector>
 class OuterAlgorithmRunner : public AlgorithmRunner<Structure> {
 
@@ -27,6 +31,11 @@ public:
 
     OuterAlgorithmRunner(Algorithm& connected, Structure& structure);
 
+    /**
+     * Calls specified method passing algorithm and structure
+     * specified in constructor.
+     * @param algorithmCode - function to call.
+     */
     void run(const std::function<void (Algorithm&, Structure&)>& algorithmCode);
 
     std::shared_ptr<AlgorithmEvent> stepBack() override;

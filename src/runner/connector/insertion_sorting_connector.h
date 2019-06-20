@@ -5,6 +5,10 @@
 #include "sort/insertion_sorting.h"
 #include "runner/event_transfer.h"
 
+/**
+ * @brief The InsertionSortingConnector connects
+ * InsertionSorting<T> and EventTransfer.
+ */
 struct InsertionSortingConnector : public QObject {
 
     Q_OBJECT

@@ -4,10 +4,14 @@
 #include "sorting.h"
 #include "utility/compare/comparator.h"
 #include "utility/compare/less.h"
-#include "event/responsive_algorithm.h"
+#include "event/responsive_entity.h"
 
+/**
+ * @brief The InsertionSorting class represents responsive
+ * insertion sort algorithm, that can be visualized.
+ */
 template <typename T>
-class InsertionSorting : public Sorting<T>, public ResponsiveAlgorithm {
+class InsertionSorting : public Sorting<T>, public ResponsiveEntity {
 
 public:
 

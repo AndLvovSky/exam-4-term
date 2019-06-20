@@ -4,6 +4,9 @@
 #include "algorithm_event.h"
 #include "backup.h"
 
+/**
+ * @brief The Put class represents puting object in a location.
+ */
 template <typename What, typename Where, typename Structure>
 struct Put : AlgorithmEvent, Backup<Structure> {
 

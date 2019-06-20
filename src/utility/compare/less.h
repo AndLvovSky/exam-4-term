@@ -8,6 +8,9 @@ class Less : public Comparator<T> {
 
 public:
 
+    /**
+     * Uses operator '<' and '=='.
+     */
     int compare(const T& a, const T& b) const override;
 
 };

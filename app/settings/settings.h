@@ -1,7 +1,12 @@
 #ifndef SETTINGS_H
 #define SETTINGS_H
 
-// Singleton
+/**
+ * @brief The Settings class represents app global settings.
+ *
+ * Uses Singleton design pattern by making constructor private,
+ * deleting copy constructor and static method get.
+ */
 class Settings {
 
     int booksToGenerate = 10;

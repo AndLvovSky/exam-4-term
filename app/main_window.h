@@ -18,7 +18,13 @@ namespace Ui {
 
 }
 
-// MVC
+/**
+ * @brief The MainWindow class represents main window.
+ *
+ * Design pattern MVC is used in this way:
+ * Controller is the MainWindow, View is the InsertionSortWidget and
+ * Model is the InsertionSortRunner and Books.
+ */
 class MainWindow : public QMainWindow {
 
     Q_OBJECT

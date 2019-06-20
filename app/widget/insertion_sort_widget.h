@@ -15,6 +15,9 @@
 #include <QMap>
 #include <QPainter>
 
+/**
+ * @brief The InsertionSortWidget used for insertion sort visualization.
+ */
 class InsertionSortWidget :
     public QLabel, public Visualizator<QVector<Book>> {
 

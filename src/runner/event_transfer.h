@@ -6,6 +6,9 @@
 #include "event/algorithm_event.h"
 #include <memory>
 
+/**
+ * @brief The EventTransfer class used to catch algorithm events.
+ */
 class EventTransfer : public QObject {
 
 Q_OBJECT

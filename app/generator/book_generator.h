@@ -4,6 +4,9 @@
 #include "domain/book.h"
 #include <QRandomGenerator>
 
+/**
+ * @brief The BookGenerator generates books.
+ */
 class BookGenerator {
 
 private:

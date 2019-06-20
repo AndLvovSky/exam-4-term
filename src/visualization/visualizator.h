@@ -4,6 +4,9 @@
 #include "event/algorithm_event.h"
 #include <memory>
 
+/**
+ * @brief The Visualizator used for visualization of algorithm steps.
+ */
 template <typename Structure>
 struct Visualizator {
 

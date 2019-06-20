@@ -4,6 +4,9 @@
 #include "algorithm_event.h"
 #include "backup.h"
 
+/**
+ * @brief The End class represents end of an algorithm.
+ */
 template <typename Structure>
 struct End : AlgorithmEvent, Backup<Structure> {
 

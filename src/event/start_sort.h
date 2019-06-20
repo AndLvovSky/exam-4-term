@@ -5,6 +5,9 @@
 #include "utility/compare/comparator.h"
 #include <memory>
 
+/**
+ * @brief The StartSort class represents start of an sorting algorithm.
+ */
 template <typename Structure, typename Element>
 struct StartSort : Start<Structure> {
 
